@@ -15,9 +15,9 @@ let displayResult = (result) => {
 let setBackground = (cityName) => {
     let body = document.querySelector('body');
     let backgroundUrl = `https://source.unsplash.com/1600x900/?${cityName}`;
-  
+
     body.style.backgroundImage = `url('${backgroundUrl}')`;
-  };
+};
 
 let displayError = () => {
     let errorText = document.querySelector('.error-text');
@@ -42,8 +42,8 @@ let getResult = (cityName) => {
 
 let setQuery = (event) => {
     if (event.keyCode === 13) {
-        let searchBar = document.getElementById('SearchBar');
-        let searchTerm = searchBar.value;
+        let searchsBar = document.getElementById('searchBar');
+        let searchTerm = searchsBar.value;
 
         // Temizleme işlemi
         let errorText = document.querySelector('.error-text');
@@ -57,5 +57,8 @@ let setQuery = (event) => {
     }
 };
 
-let searchBar = document.getElementById('SearchBar');
-searchBar.addEventListener('keypress', setQuery);
+let searchsBar = document.getElementById('searchBar');
+searchsBar.addEventListener('keypress', setQuery);
+window.onload = function () {
+    getResult('Istanbul'); // İstanbul'un hava durumu bilgilerini getir
+};
